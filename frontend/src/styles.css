@@ -1,0 +1,29 @@
+:root{--bg:#f5f7fb;--card:#fff;--accent:#007bff}
+*{box-sizing:border-box;font-family:Inter, Arial, sans-serif}
+body{margin:0;background:var(--bg);color:#222}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.topbar h1{margin:0;font-size:18px}
+.topbar button{margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#fff}
+.app main{padding:16px}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.login{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.login .card{width:320px}
+.login input{width:100%;padding:10px;margin:8px 0;border:1px solid #eee;border-radius:6px}
+.login button{width:100%;padding:10px;background:var(--accent);color:#fff;border:none;border-radius:6px}
+.pos{display:flex;gap:16px}
+.products{flex:1}
+.products .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.product{background:#fff;padding:10px;border-radius:8px;display:flex;flex-direction:column;gap:6px}
+.product button{margin-top:auto;padding:8px;background:var(--accent);color:#fff;border:none;border-radius:6px}
+.cart{width:320px;background:#fff;padding:12px;border-radius:8px}
+.cart-item{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.cart-item input{width:64px}
+.checkout{width:100%;padding:10px;margin-top:8px;background:green;color:#fff;border:none;border-radius:6px}
+.total{font-weight:600;margin-top:8px}
+.admin-list{margin-top:12px}
+.admin-item{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px;border-bottom:1px solid #f0f0f0}
+
+@media(max-width:800px){
+  .pos{flex-direction:column}
+  .cart{width:100%}
+}

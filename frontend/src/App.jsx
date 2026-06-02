@@ -3,6 +3,7 @@ import Login from './components/Login'
 import POS from './components/POS'
 import Sales from './components/Sales'
 import AdminProducts from './components/AdminProducts'
+import { setToken as setApiToken } from './services/api'
 
 export default function App() {
   const [user, setUser] = useState(() => {
@@ -16,6 +17,11 @@ export default function App() {
     if (!user) { setView('login') } else { setView('pos') }
   }, [user])
 
+  useEffect(() => {
+    // ensure API has Authorization header when token is present (survives reload)
+    setApiToken(token)
+  }, [token])
+
   const handleLogin = (user, token) => {
     setUser(user)
     setToken(token)
@@ -28,6 +34,7 @@ export default function App() {
     setToken('')
     localStorage.removeItem('pos_user')
     localStorage.removeItem('pos_token')
+    setApiToken(null)
     setView('login')
   }
 

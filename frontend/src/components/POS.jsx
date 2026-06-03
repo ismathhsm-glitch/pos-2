@@ -644,6 +644,13 @@ const styles = `
     .receipt-modal { box-shadow: none; border-radius: 0; max-width: 100%; display: block; position: static; }
     .receipt-actions { display: none; }
   }
+    .product-card-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
 `
 
 const PRODUCT_EMOJIS = ['🛍️','💄','👗','🌸','🎀','🍰','💅','🌺','👠','🎁','✨','🌷']
@@ -657,7 +664,17 @@ function getEmoji(name, idx) {
 function ProductCard({ p, idx, onAdd }) {
   return (
     <div className="product-card" onClick={() => p.stock > 0 && onAdd(p)}>
-      <div className="product-card-emoji">{getEmoji(p.name, idx)}</div>
+{p.photo ? (
+  <img
+    src={p.photo}
+    alt={p.name}
+    className="product-card-image"
+  />
+) : (
+  <div className="product-card-emoji">
+    {getEmoji(p.name, idx)}
+  </div>
+)}
       <div className="product-card-name">{p.name}</div>
       <div className="product-card-price">${p.price.toFixed(2)}</div>
       {p.stock > 0

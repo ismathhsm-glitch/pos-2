@@ -1,7 +1,7 @@
 ﻿# MERN POS System
 
 This workspace contains a simple MERN POS (Point of Sale) system with backend (Express + MongoDB) and frontend (React + Vite).
-![Portfolio Screenshot](images/p1.png)
+  ![Portfolio Screenshot](p1.png)
 
 Folders:
 - `backend/` - Express API

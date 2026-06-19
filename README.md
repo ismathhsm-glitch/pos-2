@@ -7,6 +7,12 @@ Folders:
 - `backend/` - Express API
 - `frontend/` - React app (Vite)
 
+![Portfolio Screenshod](p3.png)
+
+
+
+
+
 Quick run (in VS Code terminals):
 
 1. Start MongoDB (e.g., locally or via Docker). Default URL: `mongodb://localhost:27017/pos_db`.
